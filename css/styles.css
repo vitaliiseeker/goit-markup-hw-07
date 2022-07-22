@@ -40,7 +40,7 @@
   --checkbox-icon-color: #000;
 
   --tduration: 250ms;
-  --ttiming-function: (0.4, 0, 0.2, 1);
+  --ttiming-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -99,10 +99,6 @@ body {
   background-color: var(--background-body-color);
 }
 
-#page.no-scroll {
-  overflow: hidden;
-}
-
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -122,6 +118,19 @@ body {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* ---------------------  ШАПКА --------------------------*/
@@ -309,19 +318,6 @@ body {
 }
 
 /* ---------------------  НАШИ ПРЕИМУЩЕСТВА  --------------------------*/
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
 
 .feature.list {
   display: flex;
@@ -566,7 +562,7 @@ body {
   background-color: var(--secondary-background-color);
 }
 
-.footer>.container {
+.footer-wrapper {
   display: flex;
 }
 
@@ -783,7 +779,7 @@ body {
   fill: var(--accent-color);
 }
 
-.modal-title {
+.form-title {
   margin: 0 0 12px;
   font-weight: 700;
   font-size: 20px;
@@ -808,7 +804,7 @@ body {
   margin-top: 0;
   margin-bottom: 4px;
   font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.16;
   letter-spacing: 0.01em;
 }
 
@@ -822,8 +818,10 @@ body {
   line-height: 1.17;
   letter-spacing: 0.01em;
   border: 1px solid rgba(33, 33, 33, 0.2);
+  /* outine: 1px solid rgba(33, 33, 33, 0.2); */
   border-radius: 4px;
   outline: none;
+  /* outline: transparent; */
 
   transition-property: border-color;
   transition-duration: var(--tduration);
@@ -848,6 +846,25 @@ body {
   border-color: var(--accent-color);
   fill: var(--accent-color);
 }
+
+/* .modal-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  transition-property: fill;
+  transition-duration: var(--tduration);
+  transition-timing-function: var(--ttiming-function);
+}
+
+.form-input:focus,
+.form-field:focus-within .modal-icon {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+} */
 
 .comments {
   margin-bottom: 20px;
